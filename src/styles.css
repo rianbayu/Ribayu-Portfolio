@@ -39,7 +39,11 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 50% -20%, rgba(11, 164, 224, 0.14), transparent 34%),
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(11, 164, 224, 0.14),
+      transparent 34%
+    ),
     radial-gradient(circle at 85% 18%, rgba(96, 0, 255, 0.12), transparent 28%),
     linear-gradient(180deg, #020207 0%, #070715 45%, #020207 100%);
 }
@@ -95,16 +99,21 @@ button {
   pointer-events: none;
   background-image:
     url("/images/figma-starfield.webp"),
-    radial-gradient(circle at 18px 28px, rgba(248, 251, 255, 0.52) 1px, transparent 1.6px),
-    radial-gradient(circle at 130px 90px, rgba(11, 164, 224, 0.34) 1px, transparent 1.5px);
+    radial-gradient(
+      circle at 18px 28px,
+      rgba(248, 251, 255, 0.52) 1px,
+      transparent 1.6px
+    ),
+    radial-gradient(
+      circle at 130px 90px,
+      rgba(11, 164, 224, 0.34) 1px,
+      transparent 1.5px
+    );
   background-size:
     cover,
     190px 190px,
     310px 310px;
-  background-repeat:
-    no-repeat,
-    repeat,
-    repeat;
+  background-repeat: no-repeat, repeat, repeat;
   background-position:
     center center,
     0 0,
@@ -117,8 +126,22 @@ button {
   inset: -16%;
   content: "";
   background:
-    linear-gradient(118deg, transparent 0 44%, rgba(96, 0, 255, 0.0) 44%, rgba(96, 0, 255, 0.52) 45%, rgba(11, 164, 224, 0.18) 47%, transparent 50%),
-    linear-gradient(118deg, transparent 0 52%, rgba(96, 0, 255, 0.0) 52%, rgba(96, 0, 255, 0.42) 53%, rgba(11, 164, 224, 0.14) 55%, transparent 58%);
+    linear-gradient(
+      118deg,
+      transparent 0 44%,
+      rgba(96, 0, 255, 0) 44%,
+      rgba(96, 0, 255, 0.52) 45%,
+      rgba(11, 164, 224, 0.18) 47%,
+      transparent 50%
+    ),
+    linear-gradient(
+      118deg,
+      transparent 0 52%,
+      rgba(96, 0, 255, 0) 52%,
+      rgba(96, 0, 255, 0.42) 53%,
+      rgba(11, 164, 224, 0.14) 55%,
+      transparent 58%
+    );
   background-position:
     8% 0,
     78% 36%;
@@ -134,7 +157,11 @@ button {
   inset: 0;
   content: "";
   background:
-    radial-gradient(circle at 50% 35%, rgba(11, 164, 224, 0.1), transparent 34%),
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(11, 164, 224, 0.1),
+      transparent 34%
+    ),
     linear-gradient(115deg, rgba(96, 0, 255, 0.07), transparent 36%),
     linear-gradient(245deg, rgba(255, 255, 255, 0.036), transparent 42%);
   mix-blend-mode: screen;
@@ -201,7 +228,12 @@ button {
 
 .nav-shell {
   background:
-    linear-gradient(90deg, rgba(47, 243, 255, 0.08), transparent 30%, rgba(255, 79, 216, 0.07)),
+    linear-gradient(
+      90deg,
+      rgba(47, 243, 255, 0.08),
+      transparent 30%,
+      rgba(255, 79, 216, 0.07)
+    ),
     rgba(3, 4, 10, 0.82) !important;
   box-shadow:
     0 1px 0 rgba(47, 243, 255, 0.18),
@@ -209,7 +241,9 @@ button {
 }
 
 .nav-logo span:first-child {
-  box-shadow: inset 0 0 0 1px rgba(246, 242, 234, 0.08), 0 0 24px rgba(47, 184, 172, 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(246, 242, 234, 0.08),
+    0 0 24px rgba(47, 184, 172, 0.14);
 }
 
 .nav-rail {
@@ -261,9 +295,21 @@ button {
 
 .hero-shell {
   background:
-    radial-gradient(circle at 70% 35%, rgba(47, 243, 255, 0.15), transparent 28%),
-    radial-gradient(circle at 24% 22%, rgba(255, 79, 216, 0.12), transparent 30%),
-    radial-gradient(circle at 54% 120%, rgba(141, 255, 106, 0.1), transparent 36%),
+    radial-gradient(
+      circle at 70% 35%,
+      rgba(47, 243, 255, 0.15),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 24% 22%,
+      rgba(255, 79, 216, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 54% 120%,
+      rgba(141, 255, 106, 0.1),
+      transparent 36%
+    ),
     linear-gradient(180deg, #03040a 0%, #070914 58%, #03040a 100%);
 }
 
@@ -289,8 +335,17 @@ button {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(circle at 73% 42%, rgba(47, 243, 255, 0.08), transparent 24%),
-    linear-gradient(90deg, rgba(3, 4, 10, 0.97) 0%, rgba(3, 4, 10, 0.76) 42%, rgba(3, 4, 10, 0.26) 76%),
+    radial-gradient(
+      circle at 73% 42%,
+      rgba(47, 243, 255, 0.08),
+      transparent 24%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(3, 4, 10, 0.97) 0%,
+      rgba(3, 4, 10, 0.76) 42%,
+      rgba(3, 4, 10, 0.26) 76%
+    ),
     linear-gradient(180deg, rgba(3, 4, 10, 0.12) 0%, rgba(3, 4, 10, 0.94) 100%);
 }
 
@@ -310,7 +365,13 @@ button {
     64px 64px,
     64px 64px,
     100% 6px;
-  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 74%, transparent 100%);
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    #000 18%,
+    #000 74%,
+    transparent 100%
+  );
 }
 
 .cosmic-ring {
@@ -361,7 +422,13 @@ button {
   z-index: 2;
   width: 1px;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent, rgba(216, 179, 90, 0.34), rgba(47, 184, 172, 0.24), transparent);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(216, 179, 90, 0.34),
+    rgba(47, 184, 172, 0.24),
+    transparent
+  );
 }
 
 .hero-measure::before,
@@ -393,7 +460,12 @@ button {
   left: -28px;
   width: 3px;
   content: "";
-  background: linear-gradient(180deg, var(--cyan), var(--magenta) 48%, var(--lime));
+  background: linear-gradient(
+    180deg,
+    var(--cyan),
+    var(--magenta) 48%,
+    var(--lime)
+  );
   box-shadow: 0 0 18px rgba(47, 243, 255, 0.42);
 }
 
@@ -414,8 +486,11 @@ button {
 
 .hero-badge {
   border-color: rgba(47, 243, 255, 0.42) !important;
-  background:
-    linear-gradient(90deg, rgba(47, 243, 255, 0.15), rgba(255, 79, 216, 0.08)) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(47, 243, 255, 0.15),
+    rgba(255, 79, 216, 0.08)
+  ) !important;
   color: #d8fbff !important;
   box-shadow:
     inset 0 1px 0 rgba(246, 242, 234, 0.12),
@@ -543,8 +618,11 @@ button {
 
 .metric-tile {
   backdrop-filter: blur(14px);
-  background:
-    linear-gradient(180deg, rgba(47, 243, 255, 0.08), rgba(255, 79, 216, 0.035)) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(47, 243, 255, 0.08),
+    rgba(255, 79, 216, 0.035)
+  ) !important;
   box-shadow:
     inset 0 1px 0 rgba(246, 242, 234, 0.08),
     0 0 32px rgba(47, 243, 255, 0.08);
@@ -575,8 +653,16 @@ button {
   border: 1px solid rgba(47, 243, 255, 0.18);
   border-radius: 16px;
   background:
-    linear-gradient(180deg, rgba(47, 243, 255, 0.12), rgba(246, 242, 234, 0.018)),
-    radial-gradient(circle at 72% 22%, rgba(255, 79, 216, 0.18), transparent 28%),
+    linear-gradient(
+      180deg,
+      rgba(47, 243, 255, 0.12),
+      rgba(246, 242, 234, 0.018)
+    ),
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(255, 79, 216, 0.18),
+      transparent 28%
+    ),
     linear-gradient(135deg, rgba(8, 12, 28, 0.92), rgba(4, 6, 16, 0.88));
   box-shadow:
     inset 0 1px 0 rgba(246, 242, 234, 0.14),
@@ -592,7 +678,14 @@ button {
   inset: 0;
   padding: 1px;
   content: "";
-  background: conic-gradient(from var(--frame-angle, 0deg), var(--cyan), var(--magenta), var(--amber), var(--lime), var(--cyan));
+  background: conic-gradient(
+    from var(--frame-angle, 0deg),
+    var(--cyan),
+    var(--magenta),
+    var(--amber),
+    var(--lime),
+    var(--cyan)
+  );
   opacity: 0.78;
   mask:
     linear-gradient(#000 0 0) content-box,
@@ -609,7 +702,12 @@ button {
   background:
     linear-gradient(rgba(47, 243, 255, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(47, 243, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.055), transparent);
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(255, 255, 255, 0.055),
+      transparent
+    );
   background-size:
     36px 36px,
     36px 36px,
@@ -732,8 +830,16 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 14px;
   background:
-    radial-gradient(circle at 18% 20%, rgba(11, 164, 224, 0.18), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(11, 164, 224, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.035)
+    ),
     rgba(2, 2, 7, 0.5);
   padding: 18px;
 }
@@ -827,8 +933,17 @@ button {
   border-radius: 999px;
   background:
     radial-gradient(circle, rgba(47, 243, 255, 0.18) 0 2px, transparent 3px),
-    repeating-radial-gradient(circle, rgba(47, 243, 255, 0.24) 0 1px, transparent 1px 28px),
-    conic-gradient(from 0deg, rgba(47, 243, 255, 0.0), rgba(47, 243, 255, 0.22), rgba(47, 243, 255, 0.0) 34%);
+    repeating-radial-gradient(
+      circle,
+      rgba(47, 243, 255, 0.24) 0 1px,
+      transparent 1px 28px
+    ),
+    conic-gradient(
+      from 0deg,
+      rgba(47, 243, 255, 0),
+      rgba(47, 243, 255, 0.22),
+      rgba(47, 243, 255, 0) 34%
+    );
   box-shadow:
     inset 0 0 40px rgba(47, 243, 255, 0.12),
     0 0 38px rgba(47, 243, 255, 0.16);
@@ -867,7 +982,12 @@ button {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: conic-gradient(from 0deg, rgba(47, 243, 255, 0.36), transparent 20%, transparent);
+  background: conic-gradient(
+    from 0deg,
+    rgba(47, 243, 255, 0.36),
+    transparent 20%,
+    transparent
+  );
   animation: radarSweep 9s linear infinite;
 }
 
@@ -1002,8 +1122,16 @@ button {
 .projects-section,
 .section-grid {
   background:
-    radial-gradient(circle at 20% 0%, rgba(47, 243, 255, 0.08), transparent 34%),
-    radial-gradient(circle at 90% 25%, rgba(255, 79, 216, 0.07), transparent 28%),
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(47, 243, 255, 0.08),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 25%,
+      rgba(255, 79, 216, 0.07),
+      transparent 28%
+    ),
     linear-gradient(180deg, #03040a 0%, #070914 52%, #03040a 100%) !important;
 }
 
@@ -1014,7 +1142,11 @@ button {
 .dark-zone .contact-row {
   border-color: rgba(47, 243, 255, 0.16) !important;
   background:
-    linear-gradient(135deg, rgba(47, 243, 255, 0.09), rgba(255, 79, 216, 0.045)),
+    linear-gradient(
+      135deg,
+      rgba(47, 243, 255, 0.09),
+      rgba(255, 79, 216, 0.045)
+    ),
     rgba(5, 8, 19, 0.86) !important;
   box-shadow:
     inset 0 1px 0 rgba(246, 242, 234, 0.08),
@@ -1055,7 +1187,12 @@ button {
   border: 1px solid rgba(246, 242, 234, 0.1);
   border-radius: 14px;
   background:
-    linear-gradient(90deg, rgba(47, 184, 172, 0.11), transparent 34%, rgba(216, 179, 90, 0.08)),
+    linear-gradient(
+      90deg,
+      rgba(47, 184, 172, 0.11),
+      transparent 34%,
+      rgba(216, 179, 90, 0.08)
+    ),
     rgba(246, 242, 234, 0.035);
   padding: 12px;
   overflow: hidden;
@@ -1068,7 +1205,13 @@ button {
   left: 24px;
   height: 1px;
   content: "";
-  background: linear-gradient(90deg, transparent, rgba(47, 184, 172, 0.72), rgba(216, 179, 90, 0.64), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(47, 184, 172, 0.72),
+    rgba(216, 179, 90, 0.64),
+    transparent
+  );
 }
 
 .process-node {
@@ -1173,7 +1316,11 @@ button {
 .project-index-list div.is-active {
   border-color: rgba(47, 184, 172, 0.56);
   background:
-    linear-gradient(90deg, rgba(47, 184, 172, 0.18), rgba(246, 242, 234, 0.055)),
+    linear-gradient(
+      90deg,
+      rgba(47, 184, 172, 0.18),
+      rgba(246, 242, 234, 0.055)
+    ),
     rgba(8, 12, 13, 0.8);
   transform: translateX(8px);
 }
@@ -1217,12 +1364,8 @@ button {
   min-height: 520px;
   opacity: 0;
   pointer-events: none;
-  transform:
-    perspective(900px)
-    translateY(34px)
-    scale(0.94)
-    rotateX(var(--rx, 0deg))
-    rotateY(var(--ry, 0deg));
+  transform: perspective(900px) translateY(34px) scale(0.94)
+    rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   transition:
     opacity 420ms ease,
     transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -1233,11 +1376,7 @@ button {
 .project-stack .project-card.is-active {
   opacity: 1;
   pointer-events: auto;
-  transform:
-    perspective(900px)
-    translateY(0)
-    scale(1)
-    rotateX(var(--rx, 0deg))
+  transform: perspective(900px) translateY(0) scale(1) rotateX(var(--rx, 0deg))
     rotateY(var(--ry, 0deg));
 }
 
@@ -1247,7 +1386,11 @@ button {
 .education-card {
   border-color: rgba(47, 243, 255, 0.14) !important;
   background:
-    linear-gradient(135deg, rgba(47, 243, 255, 0.095), rgba(255, 79, 216, 0.045)),
+    linear-gradient(
+      135deg,
+      rgba(47, 243, 255, 0.095),
+      rgba(255, 79, 216, 0.045)
+    ),
     linear-gradient(180deg, rgba(5, 8, 20, 0.94), rgba(3, 4, 10, 0.92)) !important;
   box-shadow:
     inset 0 1px 0 rgba(246, 242, 234, 0.08),
@@ -1263,7 +1406,12 @@ button {
 }
 
 .project-card::before {
-  background: linear-gradient(90deg, var(--cyan), var(--magenta), var(--lime)) !important;
+  background: linear-gradient(
+    90deg,
+    var(--cyan),
+    var(--magenta),
+    var(--lime)
+  ) !important;
   box-shadow: 0 0 18px rgba(47, 243, 255, 0.26);
 }
 
@@ -1297,7 +1445,9 @@ button {
 .project-index-list div.is-active span {
   background: linear-gradient(135deg, var(--cyan), var(--lime)) !important;
   color: #03040a !important;
-  box-shadow: 0 0 0 6px rgba(47, 243, 255, 0.09), 0 0 22px rgba(47, 243, 255, 0.22);
+  box-shadow:
+    0 0 0 6px rgba(47, 243, 255, 0.09),
+    0 0 22px rgba(47, 243, 255, 0.22);
 }
 
 .project-index-list div.is-active {
@@ -1312,7 +1462,11 @@ button {
 .skill-icon,
 .contact-card {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(246, 242, 234, 0.92)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(246, 242, 234, 0.92)
+    ),
     linear-gradient(90deg, rgba(47, 184, 172, 0.08), transparent);
 }
 
@@ -1334,9 +1488,15 @@ button {
 .project-card,
 .education-card {
   background:
-    linear-gradient(135deg, rgba(246, 242, 234, 0.078), rgba(246, 242, 234, 0.028)),
+    linear-gradient(
+      135deg,
+      rgba(246, 242, 234, 0.078),
+      rgba(246, 242, 234, 0.028)
+    ),
     linear-gradient(180deg, rgba(47, 184, 172, 0.045), transparent 46%);
-  box-shadow: inset 0 1px 0 rgba(246, 242, 234, 0.055), 0 18px 56px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(246, 242, 234, 0.055),
+    0 18px 56px rgba(0, 0, 0, 0.2);
 }
 
 .focus-card::before,
@@ -1392,8 +1552,20 @@ button {
     linear-gradient(90deg, rgba(246, 242, 234, 0.055) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image:
-    linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 18%,
+      #000 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 18%,
+      #000 82%,
+      transparent 100%
+    );
 }
 
 .splash-ring {
@@ -1711,7 +1883,8 @@ button {
 }
 
 .project-card {
-  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform: perspective(900px) rotateX(var(--rx, 0deg))
+    rotateY(var(--ry, 0deg));
   transform-style: preserve-3d;
   transition:
     transform 260ms ease,
@@ -1741,7 +1914,9 @@ button {
 }
 
 .project-card:hover {
-  box-shadow: inset 0 1px 0 rgba(246, 242, 234, 0.08), 0 24px 80px rgba(0, 0, 0, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(246, 242, 234, 0.08),
+    0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
 .project-number {
@@ -1779,7 +1954,13 @@ button {
 
 .contact-band::before {
   opacity: 0.56;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 20%,
+    #000 80%,
+    transparent 100%
+  );
 }
 
 /* Figma reference refresh */
@@ -1822,7 +2003,12 @@ button {
   border-color: rgba(255, 255, 255, 0.16);
   border-radius: 14px;
   background:
-    linear-gradient(90deg, rgba(11, 164, 224, 0.12), transparent 34%, rgba(96, 0, 255, 0.14)),
+    linear-gradient(
+      90deg,
+      rgba(11, 164, 224, 0.12),
+      transparent 34%,
+      rgba(96, 0, 255, 0.14)
+    ),
     rgba(2, 2, 7, 0.74);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
@@ -1890,7 +2076,11 @@ button {
 .hero-shell {
   background:
     radial-gradient(circle at 68% 28%, rgba(96, 0, 255, 0.26), transparent 24%),
-    radial-gradient(circle at 22% 16%, rgba(11, 164, 224, 0.16), transparent 30%),
+    radial-gradient(
+      circle at 22% 16%,
+      rgba(11, 164, 224, 0.16),
+      transparent 30%
+    ),
     linear-gradient(180deg, #020207 0%, #060612 58%, #020207 100%);
 }
 
@@ -1902,13 +2092,15 @@ button {
   overflow: hidden;
   pointer-events: none;
   background-image:
-    linear-gradient(90deg, rgba(2, 2, 7, 0.92) 0%, rgba(2, 2, 7, 0.48) 52%, rgba(2, 2, 7, 0.18) 100%),
+    linear-gradient(
+      90deg,
+      rgba(2, 2, 7, 0.92) 0%,
+      rgba(2, 2, 7, 0.48) 52%,
+      rgba(2, 2, 7, 0.18) 100%
+    ),
     linear-gradient(180deg, rgba(2, 2, 7, 0.08) 0%, rgba(2, 2, 7, 0.92) 100%),
     url("/images/figma-starfield.webp");
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   background-size:
     auto,
     auto,
@@ -1925,7 +2117,11 @@ button {
   inset: 0;
   content: "";
   background:
-    radial-gradient(circle at 66% 36%, rgba(11, 164, 224, 0.18), transparent 24%),
+    radial-gradient(
+      circle at 66% 36%,
+      rgba(11, 164, 224, 0.18),
+      transparent 24%
+    ),
     radial-gradient(circle at 84% 68%, rgba(96, 0, 255, 0.16), transparent 28%);
   mix-blend-mode: screen;
 }
@@ -1936,7 +2132,12 @@ button {
   width: 180px;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(11, 164, 224, 0.16), rgba(96, 0, 255, 0.9));
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(11, 164, 224, 0.16),
+    rgba(96, 0, 255, 0.9)
+  );
   box-shadow:
     0 0 16px rgba(96, 0, 255, 0.5),
     0 0 42px rgba(11, 164, 224, 0.14);
@@ -2013,7 +2214,12 @@ button {
 
 .hero-shell::before {
   background:
-    linear-gradient(90deg, rgba(2, 2, 7, 0.98) 0%, rgba(2, 2, 7, 0.82) 42%, rgba(2, 2, 7, 0.28) 78%),
+    linear-gradient(
+      90deg,
+      rgba(2, 2, 7, 0.98) 0%,
+      rgba(2, 2, 7, 0.82) 42%,
+      rgba(2, 2, 7, 0.28) 78%
+    ),
     linear-gradient(180deg, rgba(2, 2, 7, 0.02) 0%, rgba(2, 2, 7, 0.96) 100%);
 }
 
@@ -2041,7 +2247,13 @@ button {
 }
 
 .hero-measure {
-  background: linear-gradient(180deg, transparent, rgba(11, 164, 224, 0.4), rgba(96, 0, 255, 0.32), transparent);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(11, 164, 224, 0.4),
+    rgba(96, 0, 255, 0.32),
+    transparent
+  );
 }
 
 .hero-measure::before,
@@ -2050,7 +2262,12 @@ button {
 }
 
 .hero-copy::before {
-  background: linear-gradient(180deg, #0ba4e0, #6000ff 62%, rgba(255, 255, 255, 0.72));
+  background: linear-gradient(
+    180deg,
+    #0ba4e0,
+    #6000ff 62%,
+    rgba(255, 255, 255, 0.72)
+  );
   box-shadow:
     0 0 18px rgba(11, 164, 224, 0.38),
     0 0 42px rgba(96, 0, 255, 0.24);
@@ -2140,7 +2357,11 @@ button {
 .metric-tile {
   border-color: rgba(255, 255, 255, 0.14) !important;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.045)
+    ),
     rgba(8, 9, 22, 0.72) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
@@ -2156,7 +2377,11 @@ button {
   border-radius: 17px;
   background:
     radial-gradient(circle at 76% 18%, rgba(96, 0, 255, 0.22), transparent 30%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.045)
+    ),
     rgba(6, 7, 18, 0.78);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.16),
@@ -2165,7 +2390,13 @@ button {
 }
 
 .showcase-frame::before {
-  background: conic-gradient(from var(--frame-angle, 0deg), rgba(255, 255, 255, 0.42), rgba(11, 164, 224, 0.32), rgba(96, 0, 255, 0.32), rgba(255, 255, 255, 0.42));
+  background: conic-gradient(
+    from var(--frame-angle, 0deg),
+    rgba(255, 255, 255, 0.42),
+    rgba(11, 164, 224, 0.32),
+    rgba(96, 0, 255, 0.32),
+    rgba(255, 255, 255, 0.42)
+  );
   opacity: 0.54;
 }
 
@@ -2224,8 +2455,16 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
   background:
-    radial-gradient(circle at 50% 48%, rgba(11, 164, 224, 0.2), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(11, 164, 224, 0.2),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.03)
+    );
 }
 
 .showcase-identity::before {
@@ -2303,13 +2542,18 @@ button {
 .profile-loading-frame {
   position: absolute;
   inset: 0;
-  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transform-origin: 50% 39.35%;
-  filter:
-    drop-shadow(0 0 18px rgba(45, 38, 134, 0.2))
+  transform-origin: center center; /* sekarang akurat karena inline SVG */
+  filter: drop-shadow(0 0 18px rgba(45, 38, 134, 0.2))
+    drop-shadow(0 0 28px rgba(107, 0, 156, 0.2));
+  animation: loadingSpin 5.8s linear infinite;
+  pointer-events: none;
+}
+
+.profile-loading-frame2 {
+  transform-origin: center center; /* sekarang akurat karena inline SVG */
+  filter: drop-shadow(0 0 18px rgba(45, 38, 134, 0.2))
     drop-shadow(0 0 28px rgba(107, 0, 156, 0.2));
   animation: loadingSpin 5.8s linear infinite;
   pointer-events: none;
@@ -2341,8 +2585,16 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   background:
-    radial-gradient(circle at 50% 20%, rgba(11, 164, 224, 0.28), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(11, 164, 224, 0.28),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.045)
+    );
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
     0 22px 62px rgba(0, 0, 0, 0.36),
@@ -2411,7 +2663,11 @@ button {
   border-color: rgba(255, 255, 255, 0.18);
   border-radius: 12px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    ),
     rgba(5, 6, 18, 0.82);
 }
 
@@ -2442,7 +2698,11 @@ button {
 .detail-tile {
   border-color: rgba(255, 255, 255, 0.14) !important;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.035)
+    ),
     rgba(7, 8, 20, 0.82) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
@@ -2482,7 +2742,12 @@ button {
 .focus-card::before,
 .experience-card::before,
 .education-card::before {
-  background: linear-gradient(180deg, #0ba4e0, #6000ff, rgba(255, 255, 255, 0.62));
+  background: linear-gradient(
+    180deg,
+    #0ba4e0,
+    #6000ff,
+    rgba(255, 255, 255, 0.62)
+  );
 }
 
 .process-strip,
@@ -2494,7 +2759,13 @@ button {
 }
 
 .process-strip::before {
-  background: linear-gradient(90deg, transparent, rgba(11, 164, 224, 0.72), rgba(96, 0, 255, 0.64), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(11, 164, 224, 0.72),
+    rgba(96, 0, 255, 0.64),
+    transparent
+  );
 }
 
 .process-node {
@@ -2519,7 +2790,12 @@ button {
 }
 
 .project-card::before {
-  background: linear-gradient(90deg, #0ba4e0, #6000ff, rgba(255, 255, 255, 0.72)) !important;
+  background: linear-gradient(
+    90deg,
+    #0ba4e0,
+    #6000ff,
+    rgba(255, 255, 255, 0.72)
+  ) !important;
 }
 
 .project-number {
@@ -2539,7 +2815,11 @@ button {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(circle at 14% 12%, rgba(11, 164, 224, 0.14), transparent 32%),
+    radial-gradient(
+      circle at 14% 12%,
+      rgba(11, 164, 224, 0.14),
+      transparent 32%
+    ),
     radial-gradient(circle at 88% 18%, rgba(96, 0, 255, 0.14), transparent 30%),
     linear-gradient(125deg, rgba(255, 255, 255, 0.035), transparent 34%);
 }
@@ -2610,7 +2890,12 @@ button {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #0ba4e0, #6000ff, rgba(255, 255, 255, 0.78));
+  background: linear-gradient(
+    90deg,
+    #0ba4e0,
+    #6000ff,
+    rgba(255, 255, 255, 0.78)
+  );
   box-shadow: 0 0 22px rgba(11, 164, 224, 0.26);
   transition: width 260ms ease;
 }
@@ -2622,7 +2907,11 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   background:
-    radial-gradient(circle at 18% 12%, rgba(11, 164, 224, 0.12), transparent 32%),
+    radial-gradient(
+      circle at 18% 12%,
+      rgba(11, 164, 224, 0.12),
+      transparent 32%
+    ),
     radial-gradient(circle at 80% 20%, rgba(96, 0, 255, 0.12), transparent 34%),
     rgba(4, 6, 16, 0.58);
   box-shadow:
@@ -2641,7 +2930,13 @@ button {
     linear-gradient(rgba(140, 230, 255, 0.032) 1px, transparent 1px),
     linear-gradient(90deg, rgba(140, 230, 255, 0.026) 1px, transparent 1px);
   background-size: 44px 44px;
-  mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 16%,
+    #000 84%,
+    transparent
+  );
 }
 
 .skills-horizontal-track {
@@ -2686,8 +2981,16 @@ button {
   overflow: hidden;
   border-color: rgba(255, 255, 255, 0.13) !important;
   background:
-    radial-gradient(circle at 50% 0%, rgba(11, 164, 224, 0.14), transparent 50%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.032)),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(11, 164, 224, 0.14),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.105),
+      rgba(255, 255, 255, 0.032)
+    ),
     rgba(5, 8, 20, 0.88) !important;
   padding: 18px !important;
   box-shadow:
@@ -2775,7 +3078,11 @@ button {
   min-height: 218px;
   border-color: rgba(255, 255, 255, 0.14) !important;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.032)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.032)
+    ),
     rgba(5, 8, 20, 0.82) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
@@ -2921,7 +3228,11 @@ button {
 
 .splash-screen {
   background:
-    radial-gradient(circle at 50% 20%, rgba(11, 164, 224, 0.18), transparent 30%),
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(11, 164, 224, 0.18),
+      transparent 30%
+    ),
     radial-gradient(circle at 70% 72%, rgba(96, 0, 255, 0.2), transparent 30%),
     linear-gradient(135deg, #020207 0%, #070715 54%, #020207 100%);
 }
@@ -2935,10 +3246,7 @@ button {
     cover,
     48px 48px,
     48px 48px;
-  background-repeat:
-    no-repeat,
-    repeat,
-    repeat;
+  background-repeat: no-repeat, repeat, repeat;
   background-position:
     center center,
     0 0,
@@ -2956,8 +3264,16 @@ button {
 .splash-mark {
   border-color: rgba(255, 255, 255, 0.22);
   background:
-    radial-gradient(circle at 50% 20%, rgba(11, 164, 224, 0.28), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(11, 164, 224, 0.28),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.045)
+    );
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
     0 22px 62px rgba(0, 0, 0, 0.36),
@@ -2993,8 +3309,7 @@ button {
   height: 100%;
   object-fit: contain;
   transform-origin: 50% 39.35%;
-  filter:
-    drop-shadow(0 0 18px rgba(45, 38, 134, 0.2))
+  filter: drop-shadow(0 0 18px rgba(45, 38, 134, 0.2))
     drop-shadow(0 0 28px rgba(107, 0, 156, 0.2));
   animation: loadingSpin 5.8s linear infinite;
   pointer-events: none;
@@ -3140,8 +3455,16 @@ footer a {
 @media (max-width: 1023px) {
   .hero-shell::before {
     background:
-      linear-gradient(90deg, rgba(11, 13, 15, 0.94) 0%, rgba(11, 13, 15, 0.82) 100%),
-      linear-gradient(180deg, rgba(11, 13, 15, 0.25) 0%, rgba(11, 13, 15, 0.9) 100%);
+      linear-gradient(
+        90deg,
+        rgba(11, 13, 15, 0.94) 0%,
+        rgba(11, 13, 15, 0.82) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(11, 13, 15, 0.25) 0%,
+        rgba(11, 13, 15, 0.9) 100%
+      );
   }
 
   .space-video {

@@ -1,5 +1,11 @@
 import { ArrowRight, X } from "lucide-react";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { profile } from "../data/portfolio";
 
 type SplashScreenProps = {
@@ -66,8 +72,13 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   }, [onComplete]);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const hardTimeout = window.setTimeout(() => setReadyToEnter(true), reduceMotion ? 260 : 1280);
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const hardTimeout = window.setTimeout(
+      () => setReadyToEnter(true),
+      reduceMotion ? 260 : 1280,
+    );
 
     return () => {
       window.clearTimeout(hardTimeout);
@@ -82,16 +93,40 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       role="status"
       aria-label="Memuat portfolio"
     >
-      <button type="button" className="splash-skip" onClick={complete} aria-label="Lewati intro" title="Lewati intro">
+      <button
+        type="button"
+        className="splash-skip"
+        onClick={complete}
+        aria-label="Lewati intro"
+        title="Lewati intro"
+      >
         <X size={18} />
       </button>
       <div className="splash-grid" />
       <div className="splash-content">
-        <div className="splash-photo-stage">
-          <img className="splash-loading-frame" src="/images/svg-lingkaran-frame.svg" alt="" aria-hidden="true" />
-          <div className="splash-mark" aria-label={`Foto ${profile.name}`}>
+        <div
+          className="relative max-[375px]:!w-[200px] max-[375px]:!h-[200px] w-[300px] h-[300px] flex justify-center items-center p-0"
+          aria-label={`Foto ${profile.name}`}
+        >
+          <div className="relative w-full h-full flex justify-center items-center profile-loading-frame2 drop-shadow-xl">
+            <img
+              className="w-full h-full"
+              src="/images/svg-lingkaran-frame.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div className="absolute inset-0 max-[375px]:!p-7 p-8 rounded-full">
             {photoReady ? (
-              <img src={profile.photo} alt={profile.name} width="178" height="178" decoding="async" onError={() => setPhotoReady(false)} />
+              <div className="w-full h-full ">
+                <img
+                  src={profile.photo}
+                  alt={profile.name}
+                  className="w-full h-full rounded-full"
+                  decoding="async"
+                  onError={() => setPhotoReady(false)}
+                />
+              </div>
             ) : (
               <strong>RB</strong>
             )}

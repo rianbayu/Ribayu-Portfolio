@@ -19,7 +19,14 @@ import {
   TestTube2,
   Workflow,
 } from "lucide-react";
-import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent,
+  type ReactNode,
+} from "react";
 import Navbar from "./components/Navbar";
 import SectionHeading from "./components/SectionHeading";
 import SplashScreen from "./components/SplashScreen";
@@ -49,11 +56,22 @@ function App() {
 
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const handleAnchorClick = (event: globalThis.MouseEvent) => {
-      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      )
+        return;
 
-      const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>('a[href^="#"]');
+      const anchor = (
+        event.target as Element | null
+      )?.closest<HTMLAnchorElement>('a[href^="#"]');
       const hash = anchor?.getAttribute("href");
       if (!anchor || !hash || hash === "#") return;
 
@@ -61,7 +79,8 @@ function App() {
       if (!target) return;
 
       event.preventDefault();
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - 72;
+      const targetTop =
+        target.getBoundingClientRect().top + window.scrollY - 72;
 
       window.scrollTo({
         top: Math.max(0, targetTop),
@@ -73,7 +92,9 @@ function App() {
 
     document.addEventListener("click", handleAnchorClick);
 
-    const revealElements = Array.from(document.querySelectorAll<HTMLElement>(".reveal, .timeline-item"));
+    const revealElements = Array.from(
+      document.querySelectorAll<HTMLElement>(".reveal, .timeline-item"),
+    );
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -89,7 +110,10 @@ function App() {
     );
 
     revealElements.forEach((element, index) => {
-      element.style.setProperty("--reveal-delay", `${Math.min(index % 8, 7) * 42}ms`);
+      element.style.setProperty(
+        "--reveal-delay",
+        `${Math.min(index % 8, 7) * 42}ms`,
+      );
       revealObserver.observe(element);
     });
 
@@ -124,7 +148,10 @@ function App() {
 
 function Hero() {
   return (
-    <section id="home" className="hero-shell relative isolate overflow-hidden border-b border-white/10 bg-ink pt-16">
+    <section
+      id="home"
+      className="hero-shell relative isolate overflow-hidden border-b border-white/10 bg-ink pt-16"
+    >
       <div className="figma-starfield" aria-hidden="true">
         <span className="meteor meteor-a" />
         <span className="meteor meteor-b" />
@@ -146,8 +173,12 @@ function Hero() {
             <span className="block lg:inline">Rian Bayu</span>
             <span className="block lg:inline"> Ananda</span>
           </h1>
-          <p className="hero-rank mt-4">{profile.role} / {profile.secondaryRole}</p>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-paper/75">{profile.intro}</p>
+          <p className="hero-rank mt-4">
+            {profile.role} / {profile.secondaryRole}
+          </p>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-paper/75">
+            {profile.intro}
+          </p>
           <div className="hero-proofline mt-7 flex max-w-2xl flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-paper/70">
             <span>Landing page</span>
             <span>Dashboard UI</span>
@@ -173,12 +204,22 @@ function Hero() {
             </a>
           </div>
           <div className="hero-socials mt-5 flex flex-wrap gap-3">
-            <a className="tetris-host" href={profile.githubPersonal} target="_blank" rel="noopener noreferrer" aria-label="GitHub Rian Bayu">
+            <a
+              className="tetris-host"
+              href={profile.githubPersonal}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Rian Bayu"
+            >
               <TetrisRain />
               <Github size={17} />
               <span>GitHub</span>
             </a>
-            <a className="tetris-host" href={`mailto:${profile.email}`} aria-label="Email Rian Bayu">
+            <a
+              className="tetris-host"
+              href={`mailto:${profile.email}`}
+              aria-label="Email Rian Bayu"
+            >
               <TetrisRain />
               <Mail size={17} />
               <span>Email</span>
@@ -186,10 +227,17 @@ function Hero() {
           </div>
           <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
             {metrics.map((metric) => (
-              <div key={metric.label} className="metric-tile tetris-host rounded-md border border-white/10 bg-white/[0.06] p-4">
+              <div
+                key={metric.label}
+                className="metric-tile tetris-host rounded-md border border-white/10 bg-white/[0.06] p-4"
+              >
                 <TetrisRain />
-                <p className="text-2xl font-semibold text-paper">{metric.value}</p>
-                <p className="mt-1 text-xs leading-5 text-paper/60">{metric.label}</p>
+                <p className="text-2xl font-semibold text-paper">
+                  {metric.value}
+                </p>
+                <p className="mt-1 text-xs leading-5 text-paper/60">
+                  {metric.label}
+                </p>
               </div>
             ))}
           </div>
@@ -250,15 +298,22 @@ function HeroShowcase() {
         <div className="showcase-terminal">
           <div>
             <span>01</span>
-            <p>Menerjemahkan kebutuhan bisnis dan desain menjadi layout responsif.</p>
+            <p>
+              Menerjemahkan kebutuhan bisnis dan desain menjadi layout
+              responsif.
+            </p>
           </div>
           <div>
             <span>02</span>
-            <p>Menghubungkan interface dengan REST API dan alur data yang jelas.</p>
+            <p>
+              Menghubungkan interface dengan REST API dan alur data yang jelas.
+            </p>
           </div>
           <div>
             <span>03</span>
-            <p>Melakukan validasi flow, bug fixing, dan dokumentasi serah terima.</p>
+            <p>
+              Melakukan validasi flow, bug fixing, dan dokumentasi serah terima.
+            </p>
           </div>
         </div>
 
@@ -283,11 +338,29 @@ function ProfilePhoto() {
   const [photoReady, setPhotoReady] = useState(Boolean(profile.photo));
 
   return (
-    <div className="profile-photo-stage" aria-label={`Foto ${profile.name}`}>
-      <img className="profile-loading-frame" src="/images/svg-lingkaran-frame.svg" alt="" aria-hidden="true" />
-      <div className="profile-photo-frame">
+    <div
+      className="relative max-[375px]:!w-[250px] max-[375px]:!h-[250px] w-[350px] h-[350px] flex justify-center items-center p-0"
+      aria-label={`Foto ${profile.name}`}
+    >
+      <div className="relative w-full h-full flex justify-center items-center profile-loading-frame2 drop-shadow-xl">
+        <img
+          className="w-full h-full"
+          src="/images/svg-lingkaran-frame.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+      <div className="absolute inset-0 max-[375px]:!p-7 p-10 rounded-full">
         {photoReady ? (
-          <img src={profile.photo} alt={profile.name} width="178" height="178" decoding="async" onError={() => setPhotoReady(false)} />
+          <div className="w-full h-full ">
+            <img
+              src={profile.photo}
+              alt={profile.name}
+              className="w-full h-full rounded-full"
+              decoding="async"
+              onError={() => setPhotoReady(false)}
+            />
+          </div>
         ) : (
           <strong>RB</strong>
         )}
@@ -298,7 +371,10 @@ function ProfilePhoto() {
 
 function ProfileSection() {
   return (
-    <section id="profil" className="dark-zone px-4 py-20 text-paper sm:px-6 lg:px-8">
+    <section
+      id="profil"
+      className="dark-zone px-4 py-20 text-paper sm:px-6 lg:px-8"
+    >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeading
           eyebrow="Profil"
@@ -306,9 +382,23 @@ function ProfileSection() {
           description={profile.about}
         />
         <div className="reveal grid gap-4 sm:grid-cols-2">
-          <InfoTile icon={<MapPin size={20} />} label="Lokasi" value={profile.location} />
-          <InfoTile icon={<Mail size={20} />} label="Email" value={profile.email} href={`mailto:${profile.email}`} />
-          <InfoTile icon={<Phone size={20} />} label="Telepon" value={profile.phone} href={`tel:${profile.phone}`} />
+          <InfoTile
+            icon={<MapPin size={20} />}
+            label="Lokasi"
+            value={profile.location}
+          />
+          <InfoTile
+            icon={<Mail size={20} />}
+            label="Email"
+            value={profile.email}
+            href={`mailto:${profile.email}`}
+          />
+          <InfoTile
+            icon={<Phone size={20} />}
+            label="Telepon"
+            value={profile.phone}
+            href={`tel:${profile.phone}`}
+          />
           <InfoTile
             icon={<Github size={20} />}
             label="GitHub"
@@ -323,7 +413,10 @@ function ProfileSection() {
 
 function FocusSection() {
   return (
-    <section id="cara-kerja" className="bg-[#11110f] px-4 py-20 sm:px-6 lg:px-8">
+    <section
+      id="cara-kerja"
+      className="bg-[#11110f] px-4 py-20 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Cara Kerja"
@@ -332,7 +425,10 @@ function FocusSection() {
         />
         <div className="process-strip reveal mb-8">
           {focusAreas.map((item, index) => (
-            <div key={`process-${item.title}`} className="process-node tetris-host">
+            <div
+              key={`process-${item.title}`}
+              className="process-node tetris-host"
+            >
               <TetrisRain />
               <span>0{index + 1}</span>
               <p>{item.title}</p>
@@ -344,13 +440,20 @@ function FocusSection() {
             const Icon = focusIconsByIndex[index] ?? CheckCircle2;
 
             return (
-              <article key={item.title} className="focus-card tetris-host reveal rounded-md border border-white/10 bg-ink/80 p-5">
+              <article
+                key={item.title}
+                className="focus-card tetris-host reveal rounded-md border border-white/10 bg-ink/80 p-5"
+              >
                 <TetrisRain />
                 <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-signal/10 text-signal">
                   <Icon size={21} />
                 </div>
-                <h3 className="text-xl font-semibold text-paper">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-paper/70">{item.description}</p>
+                <h3 className="text-xl font-semibold text-paper">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-paper/70">
+                  {item.description}
+                </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {item.tools.map((tool) => (
                     <span
@@ -388,14 +491,20 @@ function InfoTile({
         {icon}
       </div>
       <p className="text-sm font-medium text-ink/60">{label}</p>
-      <p className="mt-2 break-words text-base font-semibold text-ink">{value}</p>
+      <p className="mt-2 break-words text-base font-semibold text-ink">
+        {value}
+      </p>
     </div>
   );
 
   if (!href) return content;
 
   return (
-    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined}>
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+    >
       {content}
     </a>
   );
@@ -403,7 +512,10 @@ function InfoTile({
 
 function ExperienceSection() {
   return (
-    <section id="pengalaman" className="section-grid bg-ink px-4 py-24 sm:px-6 lg:px-8">
+    <section
+      id="pengalaman"
+      className="section-grid bg-ink px-4 py-24 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Pengalaman"
@@ -421,17 +533,26 @@ function ExperienceSection() {
                 <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-md bg-signal/10 text-signal">
                   <BriefcaseBusiness size={20} />
                 </div>
-                <p className="text-sm font-semibold text-brass">{item.period}</p>
-                <h3 className="mt-3 text-xl font-semibold text-paper">{item.role}</h3>
+                <p className="text-sm font-semibold text-brass">
+                  {item.period}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold text-paper">
+                  {item.role}
+                </h3>
                 <p className="mt-2 text-sm text-paper/60">
                   {item.company} · {item.location}
                 </p>
               </div>
               <div>
-                <p className="text-base leading-7 text-paper/75">{item.summary}</p>
+                <p className="text-base leading-7 text-paper/75">
+                  {item.summary}
+                </p>
                 <ul className="mt-5 grid gap-3">
                   {item.points.map((point) => (
-                    <li key={point} className="flex gap-3 text-sm leading-6 text-paper/70">
+                    <li
+                      key={point}
+                      className="flex gap-3 text-sm leading-6 text-paper/70"
+                    >
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-sm bg-ember" />
                       <span>{point}</span>
                     </li>
@@ -469,7 +590,9 @@ function ProjectsSection() {
     const pin = pinRef.current;
     if (!section || !pin) return undefined;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reduceMotion || window.matchMedia("(max-width: 767px)").matches) {
       setActiveProjectIndex(0);
       return undefined;
@@ -478,13 +601,17 @@ function ProjectsSection() {
     const trigger = ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: () => `+=${Math.max(projects.length, 1) * window.innerHeight * 0.86}`,
+      end: () =>
+        `+=${Math.max(projects.length, 1) * window.innerHeight * 0.86}`,
       pin,
       scrub: 0.85,
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
-        const nextIndex = Math.min(projects.length - 1, Math.floor(self.progress * projects.length));
+        const nextIndex = Math.min(
+          projects.length - 1,
+          Math.floor(self.progress * projects.length),
+        );
         if (activeIndexRef.current === nextIndex) return;
         activeIndexRef.current = nextIndex;
         setActiveProjectIndex(nextIndex);
@@ -514,8 +641,12 @@ function ProjectsSection() {
               {projects.map((project, index) => (
                 <div
                   key={`project-index-${project.title}`}
-                  className={index === activeProjectIndex ? "is-active" : undefined}
-                  aria-current={index === activeProjectIndex ? "step" : undefined}
+                  className={
+                    index === activeProjectIndex ? "is-active" : undefined
+                  }
+                  aria-current={
+                    index === activeProjectIndex ? "step" : undefined
+                  }
                 >
                   <span>0{index + 1}</span>
                   <p>{project.label}</p>
@@ -540,14 +671,22 @@ function ProjectsSection() {
   );
 }
 
-function ProjectCard({ project, index, active = true }: { project: Project; index: number; active?: boolean }) {
+function ProjectCard({
+  project,
+  index,
+  active = true,
+}: {
+  project: Project;
+  index: number;
+  active?: boolean;
+}) {
   const handleMove = (event: MouseEvent<HTMLElement>) => {
     const element = event.currentTarget;
     const rect = element.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    const rotateY = ((x / rect.width) - 0.5) * 5;
-    const rotateX = ((y / rect.height) - 0.5) * -5;
+    const rotateY = (x / rect.width - 0.5) * 5;
+    const rotateX = (y / rect.height - 0.5) * -5;
     element.style.setProperty("--rx", `${rotateX}deg`);
     element.style.setProperty("--ry", `${rotateY}deg`);
   };
@@ -578,11 +717,16 @@ function ProjectCard({ project, index, active = true }: { project: Project; inde
         </span>
       </div>
       <p className="text-sm font-semibold text-signal">{project.role}</p>
-      <h3 className="mt-2 text-2xl font-semibold text-paper">{project.title}</h3>
+      <h3 className="mt-2 text-2xl font-semibold text-paper">
+        {project.title}
+      </h3>
       <p className="mt-4 text-sm leading-7 text-paper/70">{project.summary}</p>
       <ul className="mt-5 grid gap-2">
         {project.points.map((point) => (
-          <li key={point} className="flex gap-3 text-sm leading-6 text-paper/60">
+          <li
+            key={point}
+            className="flex gap-3 text-sm leading-6 text-paper/60"
+          >
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-sm bg-moss" />
             <span>{point}</span>
           </li>
@@ -620,7 +764,9 @@ function SkillsSection() {
     const track = trackRef.current;
     if (!section || !pin || !viewport || !track) return undefined;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reduceMotion) {
       setActiveStep(0);
       return undefined;
@@ -637,7 +783,8 @@ function SkillsSection() {
     const trigger = ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: () => `+=${Math.max(totalSkillSteps - 1, 1) * window.innerHeight * (isCompactViewport ? 0.38 : 0.52)}`,
+      end: () =>
+        `+=${Math.max(totalSkillSteps - 1, 1) * window.innerHeight * (isCompactViewport ? 0.38 : 0.52)}`,
       pin,
       scrub: isCompactViewport ? 0.58 : 0.72,
       animation: tween,
@@ -653,7 +800,10 @@ function SkillsSection() {
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
-        const nextStep = Math.min(totalSkillSteps - 1, Math.round(self.progress * (totalSkillSteps - 1)));
+        const nextStep = Math.min(
+          totalSkillSteps - 1,
+          Math.round(self.progress * (totalSkillSteps - 1)),
+        );
         if (activeStepRef.current === nextStep) return;
         activeStepRef.current = nextStep;
         setActiveStep(nextStep);
@@ -669,7 +819,11 @@ function SkillsSection() {
   const activeLabel = skillIcons[activeStep]?.name ?? "Skill";
 
   return (
-    <section ref={sectionRef} id="keahlian" className="skills-section dark-zone px-4 py-24 text-paper sm:px-6 lg:px-8">
+    <section
+      ref={sectionRef}
+      id="keahlian"
+      className="skills-section dark-zone px-4 py-24 text-paper sm:px-6 lg:px-8"
+    >
       <div ref={pinRef} className="skills-pin mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Keahlian"
@@ -684,12 +838,17 @@ function SkillsSection() {
               <p>{activeLabel}</p>
             </div>
             <strong>
-              {String(activeStep + 1).padStart(2, "0")} / {String(totalSkillSteps).padStart(2, "0")}
+              {String(activeStep + 1).padStart(2, "0")} /{" "}
+              {String(totalSkillSteps).padStart(2, "0")}
             </strong>
           </div>
 
           <div className="skills-progress-track" aria-hidden="true">
-            <span style={{ width: `${((activeStep + 1) / totalSkillSteps) * 100}%` }} />
+            <span
+              style={{
+                width: `${((activeStep + 1) / totalSkillSteps) * 100}%`,
+              }}
+            />
           </div>
 
           <div ref={viewportRef} className="skills-horizontal-viewport">
@@ -701,7 +860,14 @@ function SkillsSection() {
                 >
                   <article className="skill-snap-card skill-snap-icon-card skill-icon tetris-host rounded-md border border-ink/10 bg-white p-6 text-center shadow-sm">
                     <TetrisRain />
-                    <img src={item.icon} alt="" width="92" height="92" loading="lazy" decoding="async" />
+                    <img
+                      src={item.icon}
+                      alt=""
+                      width="92"
+                      height="92"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <h3>{item.name}</h3>
                   </article>
                 </div>
@@ -711,7 +877,10 @@ function SkillsSection() {
 
           <div className="skills-snap-dots" aria-hidden="true">
             {Array.from({ length: totalSkillSteps }).map((_, index) => (
-              <span key={`skill-step-${index}`} className={index <= activeStep ? "is-active" : ""} />
+              <span
+                key={`skill-step-${index}`}
+                className={index <= activeStep ? "is-active" : ""}
+              />
             ))}
           </div>
         </div>
@@ -735,7 +904,9 @@ function SkillsSection() {
                 <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-ink text-signal">
                   <Icon size={21} />
                 </div>
-                <h3 className="text-xl font-semibold text-ink">{group.title}</h3>
+                <h3 className="text-xl font-semibold text-ink">
+                  {group.title}
+                </h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {group.tools.map((tool) => (
                     <span
@@ -769,7 +940,9 @@ function EducationSection() {
             <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md bg-brass/15 text-brass">
               <GraduationCap size={23} />
             </div>
-            <h3 className="text-2xl font-semibold text-paper">{education.school}</h3>
+            <h3 className="text-2xl font-semibold text-paper">
+              {education.school}
+            </h3>
             <p className="mt-2 text-paper/70">{education.degree}</p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               <Detail label="Lokasi" value={education.location} />
@@ -781,7 +954,10 @@ function EducationSection() {
         </div>
 
         <div>
-          <SectionHeading eyebrow="Sertifikasi" title="Pelatihan web dan pemrograman." />
+          <SectionHeading
+            eyebrow="Sertifikasi"
+            title="Pelatihan web dan pemrograman."
+          />
           <div className="grid gap-3">
             {certifications.map((certification) => (
               <div
@@ -814,16 +990,21 @@ function Detail({ label, value }: { label: string; value: string }) {
 
 function ContactSection() {
   return (
-    <section id="kontak" className="contact-band dark-zone relative overflow-hidden px-4 py-24 text-paper sm:px-6 lg:px-8">
+    <section
+      id="kontak"
+      className="contact-band dark-zone relative overflow-hidden px-4 py-24 text-paper sm:px-6 lg:px-8"
+    >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
         <div className="reveal">
-          <p className="mb-3 text-sm font-semibold uppercase text-signal">Kontak</p>
+          <p className="mb-3 text-sm font-semibold uppercase text-signal">
+            Kontak
+          </p>
           <h2 className="font-display text-4xl font-semibold text-paper sm:text-5xl">
             Siap membangun interface yang rapi, responsif, dan bisa diuji.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-paper/70">
-            Untuk diskusi project, kerja sama, atau proses rekrutmen, hubungi saya lewat email
-            atau lihat repository GitHub yang tersedia di CV.
+            Untuk diskusi project, kerja sama, atau proses rekrutmen, hubungi
+            saya lewat email atau lihat repository GitHub yang tersedia di CV.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -851,10 +1032,29 @@ function ContactSection() {
         <div className="contact-card tetris-host reveal rounded-md border border-ink/10 bg-white p-5">
           <TetrisRain />
           <div className="grid gap-3">
-            <ContactRow icon={<Mail size={18} />} label="Email" value={profile.email} href={`mailto:${profile.email}`} />
-            <ContactRow icon={<Phone size={18} />} label="Telepon" value={profile.phone} href={`tel:${profile.phone}`} />
-            <ContactRow icon={<MapPin size={18} />} label="Lokasi" value={profile.location} />
-            <ContactRow icon={<Download size={18} />} label="CV" value="CV_RianBayuAnanda.pdf" href={profile.cv} />
+            <ContactRow
+              icon={<Mail size={18} />}
+              label="Email"
+              value={profile.email}
+              href={`mailto:${profile.email}`}
+            />
+            <ContactRow
+              icon={<Phone size={18} />}
+              label="Telepon"
+              value={profile.phone}
+              href={`tel:${profile.phone}`}
+            />
+            <ContactRow
+              icon={<MapPin size={18} />}
+              label="Lokasi"
+              value={profile.location}
+            />
+            <ContactRow
+              icon={<Download size={18} />}
+              label="CV"
+              value="CV_RianBayuAnanda.pdf"
+              href={profile.cv}
+            />
           </div>
         </div>
       </div>
@@ -867,24 +1067,41 @@ function Footer() {
     <footer className="border-t border-white/10 bg-ink px-4 py-8 text-paper sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div>
-          <a href="#home" className="inline-flex items-center gap-3" aria-label="Kembali ke atas">
+          <a
+            href="#home"
+            className="inline-flex items-center gap-3"
+            aria-label="Kembali ke atas"
+          >
             <span className="grid h-9 w-9 place-items-center rounded-md border border-signal/50 bg-signal/10 font-semibold text-paper">
               RB
             </span>
             <span>
-              <span className="block text-sm font-semibold">{profile.name}</span>
-              <span className="block text-xs text-paper/55">{profile.role} / {profile.secondaryRole}</span>
+              <span className="block text-sm font-semibold">
+                {profile.name}
+              </span>
+              <span className="block text-xs text-paper/55">
+                {profile.role} / {profile.secondaryRole}
+              </span>
             </span>
           </a>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm text-paper/60">
-          <a href="#proyek" className="rounded-md px-3 py-2 transition hover:bg-white/[0.07] hover:text-paper">
+          <a
+            href="#proyek"
+            className="rounded-md px-3 py-2 transition hover:bg-white/[0.07] hover:text-paper"
+          >
             Proyek
           </a>
-          <a href="#keahlian" className="rounded-md px-3 py-2 transition hover:bg-white/[0.07] hover:text-paper">
+          <a
+            href="#keahlian"
+            className="rounded-md px-3 py-2 transition hover:bg-white/[0.07] hover:text-paper"
+          >
             Keahlian
           </a>
-          <a href={`mailto:${profile.email}`} className="rounded-md px-3 py-2 transition hover:bg-white/[0.07] hover:text-paper">
+          <a
+            href={`mailto:${profile.email}`}
+            className="rounded-md px-3 py-2 transition hover:bg-white/[0.07] hover:text-paper"
+          >
             Email
           </a>
           <a
@@ -919,8 +1136,12 @@ function ContactRow({
         {icon}
       </span>
       <span className="min-w-0">
-        <span className="block text-xs font-semibold uppercase text-ink/50">{label}</span>
-        <span className="block truncate text-sm font-semibold text-ink">{value}</span>
+        <span className="block text-xs font-semibold uppercase text-ink/50">
+          {label}
+        </span>
+        <span className="block truncate text-sm font-semibold text-ink">
+          {value}
+        </span>
       </span>
     </div>
   );
@@ -930,8 +1151,14 @@ function ContactRow({
   return (
     <a
       href={href}
-      target={href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined}
-      rel={href.startsWith("http") || href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
+      target={
+        href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined
+      }
+      rel={
+        href.startsWith("http") || href.endsWith(".pdf")
+          ? "noopener noreferrer"
+          : undefined
+      }
     >
       {content}
     </a>
