@@ -105,7 +105,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       <div className="splash-grid" />
       <div className="splash-content">
         <div
-          className="relative max-[375px]:!w-[200px] max-[375px]:!h-[200px] w-[300px] h-[300px] flex justify-center items-center p-0"
+          className="relative max-[375px]:!w-[200px] max-[375px]:!h-[200px] max-[425px]:!w-[250px] max-[425px]:!h-[250px] w-[280px] h-[280px] flex justify-center items-center p-0"
           aria-label={`Foto ${profile.name}`}
         >
           <div className="relative w-full h-full flex justify-center items-center profile-loading-frame2 drop-shadow-xl">
