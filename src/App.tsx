@@ -27,7 +27,11 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
+import ChatWidget from "./components/ChatWidget";
+import LandingPreviewCard from "./components/LandingPreviewCard";
 import Navbar from "./components/Navbar";
+import ProfilePin from "./components/ProfilePin";
+import ScrollTopButton from "./components/ScrollTopButton";
 import SectionHeading from "./components/SectionHeading";
 import SplashScreen from "./components/SplashScreen";
 import TetrisRain from "./components/TetrisRain";
@@ -36,6 +40,7 @@ import {
   education,
   experiences,
   focusAreas,
+  landingPages,
   metrics,
   profile,
   projects,
@@ -132,21 +137,28 @@ function App() {
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       <Navbar />
       <main id="main-content">
-        <Hero />
+        <Hero splashDone={!showSplash} />
         <ProfileSection />
         <FocusSection />
         <ExperienceSection />
         <ProjectsSection />
+        <LandingPagesSection />
         <SkillsSection />
         <EducationSection />
         <ContactSection />
         <Footer />
       </main>
+      {!showSplash && (
+        <div className="floating-dock">
+          <ChatWidget />
+          <ScrollTopButton />
+        </div>
+      )}
     </div>
   );
 }
 
-function Hero() {
+function Hero({ splashDone }: { splashDone: boolean }) {
   return (
     <section
       id="home"
@@ -162,7 +174,7 @@ function Hero() {
       <div className="hero-measure" aria-hidden="true" />
       <div className="hero-layout relative z-10 mx-auto grid min-h-[92svh] max-w-7xl items-center px-4 py-20 sm:px-6 lg:grid-cols-[0.96fr_1.04fr] lg:px-8">
         <div className="hero-centerpiece lg:col-span-2">
-          <ProfilePhoto />
+          <ProfilePin start={splashDone} />
         </div>
         <div className="hero-copy min-w-0 max-w-3xl">
           <p className="hero-badge mb-4 inline-flex items-center gap-2 rounded-md border border-signal/40 bg-signal/10 px-3 py-2 text-sm font-medium text-signal">
@@ -334,40 +346,6 @@ function HeroShowcase() {
   );
 }
 
-function ProfilePhoto() {
-  const [photoReady, setPhotoReady] = useState(Boolean(profile.photo));
-
-  return (
-    <div
-      className="relative max-[375px]:!w-[200px] max-[375px]:!h-[200px] max-[425px]:!w-[250px] max-[425px]:!h-[250px] w-[280px] h-[280px] flex justify-center items-center p-0"
-      aria-label={`Foto ${profile.name}`}
-    >
-      <div className="relative w-full h-full flex justify-center items-center profile-loading-frame2 drop-shadow-xl">
-        <img
-          className="w-full h-full"
-          src="/images/svg-lingkaran-frame.svg"
-          alt=""
-          aria-hidden="true"
-        />
-      </div>
-      <div className="absolute inset-0 max-[375px]:!p-7 p-8 rounded-full">
-        {photoReady ? (
-          <div className="w-full h-full ">
-            <img
-              src={profile.photo}
-              alt={profile.name}
-              className="w-full h-full rounded-full"
-              decoding="async"
-              onError={() => setPhotoReady(false)}
-            />
-          </div>
-        ) : (
-          <strong>RB</strong>
-        )}
-      </div>
-    </div>
-  );
-}
 
 function ProfileSection() {
   return (
@@ -665,6 +643,29 @@ function ProjectsSection() {
               />
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LandingPagesSection() {
+  return (
+    <section
+      id="landing-page"
+      className="landing-section border-y border-white/10 bg-ink px-4 py-24 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="Landing Page"
+          title="Halaman yang sudah tayang dan bisa dibuka langsung."
+          description="Landing page yang saya kerjakan sebagai front-end, dua di antaranya sudah tayang di domain produksi perusahaan. Pratinjau di bawah menampilkan versi desktop dari situs aslinya secara langsung."
+        />
+
+        <div className="landing-grid reveal">
+          {landingPages.map((page) => (
+            <LandingPreviewCard key={page.url} page={page} />
+          ))}
         </div>
       </div>
     </section>
