@@ -8,6 +8,7 @@ const navItems = [
   { label: "Cara Kerja", href: "#cara-kerja" },
   { label: "Pengalaman", href: "#pengalaman" },
   { label: "Proyek", href: "#proyek" },
+  { label: "Landing Page", href: "#landing-page" },
   { label: "Keahlian", href: "#keahlian" },
   { label: "Kontak", href: "#kontak" },
 ];
@@ -32,14 +33,20 @@ export default function Navbar() {
       }`}
     >
       <nav className="site-nav mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#home" className="nav-logo group flex items-center gap-3" aria-label="Rian Bayu Ananda">
+        <a
+          href="#home"
+          className="nav-logo group flex items-center gap-3"
+          aria-label="Rian Bayu Ananda"
+        >
           <span className="grid h-9 w-9 place-items-center rounded-md border border-signal/50 bg-signal/10 font-semibold text-paper">
             RB
           </span>
-          <span className="hidden text-sm font-semibold text-paper sm:block">Rian Bayu Ananda</span>
+          <span className="hidden text-sm font-semibold text-paper sm:block">
+            Rian Bayu Ananda
+          </span>
         </a>
 
-        <div className="nav-rail hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
