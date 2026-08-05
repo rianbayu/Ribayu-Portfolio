@@ -17,6 +17,18 @@ export type Project = {
   points: string[];
 };
 
+export type LandingPage = {
+  name: string;
+  tagline: string;
+  role: string;
+  url: string;
+  summary: string;
+  stack: string[];
+  status: "production" | "prototype";
+  statusLabel: string;
+  note?: string;
+};
+
 export type FocusArea = {
   title: string;
   description: string;
@@ -33,7 +45,7 @@ export const profile = {
   githubPersonal: "https://github.com/rianbayu",
   location: "Jakarta / Depok, Indonesia",
   cv: "/files/CV_RianBayuAnanda.pdf",
-  photo: "/images/komari.svg",
+  photo: "/images/komari.webp",
   intro:
     "Lulusan S1 Sistem Informasi Universitas Gunadarma dengan fokus pada pengembangan antarmuka, integrasi REST API, dan pengujian fitur aplikasi.",
   about:
@@ -189,6 +201,43 @@ export const projects: Project[] = [
       "Mendukung persiapan Command Center di Kabupaten Penajam Paser Utara.",
       "Membantu analisis sistem serta redesain UI/UX aplikasi.",
     ],
+  },
+];
+
+export const landingPages: LandingPage[] = [
+  {
+    name: "SMI AI Solution",
+    tagline: "Landing page perusahaan",
+    role: "Front-End Web Developer",
+    url: "https://seleris.ai/",
+    summary:
+      "Halaman utama lini solusi AI kesehatan: health check cepat, skor risiko kardiovaskular, underwriting asuransi, dan program wellness korporat.",
+    stack: ["Vue 3", "Tailwind CSS", "Swiper", "AOS", "ApexCharts"],
+    status: "production",
+    statusLabel: "Produksi",
+  },
+  {
+    name: "SELICA",
+    tagline: "Landing page produk SELICA",
+    role: "Front-End Web Developer",
+    url: "https://seleriscare.ai/",
+    summary:
+      "Halaman produk dengan penyajian data berbasis grafik dan alur konten bertahap untuk menjelaskan manfaat produk ke calon klien.",
+    stack: ["Vue 3", "Tailwind CSS", "ApexCharts", "AOS"],
+    status: "production",
+    statusLabel: "Produksi",
+  },
+  {
+    name: "SALVION AI",
+    tagline: "Landing page eksploratif",
+    role: "Front-End Web Developer",
+    url: "https://salvionlp.pages.dev/",
+    summary:
+      "Eksplorasi konsep dan motion untuk produk pemantauan sinyal kesehatan, dibangun dengan pendekatan animasi berbasis scroll.",
+    stack: ["React", "Tailwind CSS", "Framer Motion"],
+    status: "prototype",
+    statusLabel: "Prototype",
+    note: "Deploy uji coba mandiri via Cloudflare Pages. Dioptimalkan untuk desktop, pengerjaan responsif belum dilanjutkan.",
   },
 ];
 
