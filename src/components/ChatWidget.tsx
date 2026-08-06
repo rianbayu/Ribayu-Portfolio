@@ -167,6 +167,19 @@ export default function ChatWidget() {
           },
         ]);
         setTyping(false);
+
+        // Halaman di belakang panel ikut digeser ke section yang dibahas,
+        // supaya jawaban chat dan isi halaman menunjuk hal yang sama.
+        if (!reply.anchor) return;
+
+        const target = document.getElementById(reply.anchor.slice(1));
+        if (!target) return;
+
+        window.scrollTo({
+          top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - 72),
+          left: 0,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
       }, delay);
     },
     [reduceMotion, typing],
