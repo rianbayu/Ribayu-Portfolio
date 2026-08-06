@@ -29,6 +29,7 @@ import {
 } from "react";
 import ChatWidget from "./components/ChatWidget";
 import LandingPreviewCard from "./components/LandingPreviewCard";
+import LiveStats from "./components/LiveStats";
 import Navbar from "./components/Navbar";
 import ProfilePin from "./components/ProfilePin";
 import ScrollTopButton from "./components/ScrollTopButton";
@@ -145,6 +146,7 @@ function App() {
         <LandingPagesSection />
         <SkillsSection />
         <EducationSection />
+        <StatsSection />
         <ContactSection />
         <Footer />
       </main>
@@ -927,9 +929,30 @@ function SkillsSection() {
   );
 }
 
+function StatsSection() {
+  return (
+    <section
+      id="statistik"
+      className="stats-section bg-[#11110f] px-4 py-20 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="Statistik"
+          title="Angka yang memperbarui dirinya sendiri."
+          description="Empat penanda hidup dari portofolio ini: berapa kali dikunjungi, jumlah repositori publik, waktu setempat, dan kapan terakhir diperbarui."
+        />
+        <LiveStats />
+      </div>
+    </section>
+  );
+}
+
 function EducationSection() {
   return (
-    <section className="section-grid bg-ink px-4 py-24 sm:px-6 lg:px-8">
+    <section
+      id="pendidikan"
+      className="section-grid bg-ink px-4 py-24 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <SectionHeading
