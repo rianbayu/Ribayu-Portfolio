@@ -13,12 +13,16 @@ import {
 export type ChatReply = {
   text: string;
   chips?: string[];
+  /** Section di halaman yang dituju setelah jawaban ini tampil. */
+  anchor?: string;
 };
 
 type Intent = {
   id: string;
   keywords: string[];
   phrases?: string[];
+  /** Section yang relevan; halaman ikut digeser ke sini saat intent cocok. */
+  anchor?: string;
   build: () => ChatReply;
 };
 
@@ -47,6 +51,7 @@ const intents: Intent[] = [
   },
   {
     id: "profile",
+    anchor: "#profil",
     keywords: ["siapa", "profil", "tentang", "about", "perkenalan", "biodata", "background"],
     phrases: ["ceritakan diri", "kenalan"],
     build: () => ({
@@ -56,6 +61,7 @@ const intents: Intent[] = [
   },
   {
     id: "experience",
+    anchor: "#pengalaman",
     keywords: ["pengalaman", "kerja", "karir", "karier", "perusahaan", "kantor", "experience", "magang", "jabatan", "posisi"],
     phrases: ["riwayat kerja", "pernah kerja"],
     build: () => ({
@@ -69,6 +75,7 @@ const intents: Intent[] = [
   },
   {
     id: "current-job",
+    anchor: "#pengalaman",
     keywords: ["sekarang", "terkini", "current", "seleris"],
     phrases: ["pekerjaan sekarang", "kerja dimana", "detail pekerjaan"],
     build: () => {
@@ -83,29 +90,34 @@ const intents: Intent[] = [
   },
   {
     id: "project-government",
+    anchor: "#proyek",
     keywords: ["maluku", "pemerintah", "government", "codeigniter"],
     build: () => buildProject(0),
   },
   {
     id: "project-recruitment",
+    anchor: "#proyek",
     keywords: ["recruitment", "rekrutmen", "oprec", "bem"],
     phrases: ["open recruitment"],
     build: () => buildProject(1),
   },
   {
     id: "project-camunda",
+    anchor: "#proyek",
     keywords: ["camunda", "skripsi", "bpmn", "thesis"],
     phrases: ["proses bisnis"],
     build: () => buildProject(2),
   },
   {
     id: "project-mbkm",
+    anchor: "#proyek",
     keywords: ["mbkm", "smart", "command", "penajam"],
     phrases: ["ug-smart", "ug smart"],
     build: () => buildProject(3),
   },
   {
     id: "projects",
+    anchor: "#proyek",
     keywords: ["proyek", "project", "portofolio", "portfolio", "karya", "aplikasi", "produk"],
     phrases: ["pernah buat", "hasil kerja"],
     build: () => ({
@@ -117,7 +129,8 @@ const intents: Intent[] = [
   },
   {
     id: "landing",
-    keywords: ["landing", "situs", "website", "web", "live", "demo", "link", "url", "tayang", "deploy", "selica", "salvion", "smi"],
+    anchor: "#landing-page",
+    keywords: ["landing", "situs", "website", "live", "demo", "link", "url", "tayang", "deploy", "selica", "salvion", "smi"],
     phrases: ["landing page", "bisa dilihat"],
     build: () => ({
       text: `Ada ${landingPages.length} landing page yang sudah tayang dan bisa dibuka langsung:\n${bullet(
@@ -131,6 +144,7 @@ const intents: Intent[] = [
   },
   {
     id: "skills",
+    anchor: "#keahlian",
     keywords: ["keahlian", "skill", "kemampuan", "teknologi", "stack", "framework", "bahasa", "tools", "menguasai"],
     phrases: ["tech stack", "bisa apa"],
     build: () => ({
@@ -142,6 +156,7 @@ const intents: Intent[] = [
   },
   {
     id: "focus",
+    anchor: "#cara-kerja",
     keywords: ["fokus", "spesialisasi", "layanan", "cara"],
     phrases: ["cara kerja", "alur kerja", "bisa bantu apa"],
     build: () => ({
@@ -153,6 +168,7 @@ const intents: Intent[] = [
   },
   {
     id: "education",
+    anchor: "#pendidikan",
     keywords: ["pendidikan", "kuliah", "kampus", "universitas", "gunadarma", "ipk", "gpa", "jurusan", "lulus", "sarjana"],
     phrases: ["s1", "education"],
     build: () => ({
@@ -164,6 +180,7 @@ const intents: Intent[] = [
   },
   {
     id: "certification",
+    anchor: "#pendidikan",
     keywords: ["sertifikat", "sertifikasi", "certificate", "pelatihan", "kursus"],
     build: () => ({
       text: `Sertifikasi yang dimiliki:\n${bullet(certifications)}`,
@@ -172,6 +189,7 @@ const intents: Intent[] = [
   },
   {
     id: "contact",
+    anchor: "#kontak",
     keywords: ["kontak", "hubungi", "email", "kirim", "telepon", "hp", "nomor", "whatsapp", "wa", "contact"],
     phrases: ["cara menghubungi", "gimana hubungi"],
     build: () => ({
@@ -186,6 +204,7 @@ const intents: Intent[] = [
   },
   {
     id: "cv",
+    anchor: "#kontak",
     keywords: ["cv", "resume", "unduh", "download", "berkas", "dokumen"],
     build: () => ({
       text: `CV lengkap bisa diunduh di bagian Kontak, atau langsung lewat tombol "CV" di navbar (${profile.cv}).`,
@@ -194,6 +213,7 @@ const intents: Intent[] = [
   },
   {
     id: "availability",
+    anchor: "#kontak",
     keywords: ["tersedia", "ketersediaan", "available", "freelance", "lowongan", "rekrut", "hire", "kolaborasi", "kerjasama", "gaji", "rate"],
     phrases: ["kerja sama", "buka lowongan", "terima project"],
     build: () => ({
@@ -207,6 +227,16 @@ const intents: Intent[] = [
     build: () => ({
       text: `Berbasis di ${profile.location}. Terbiasa bekerja on-site di area Jabodetabek maupun remote dengan koordinasi tim.`,
       chips: ["Status ketersediaan", "Cara menghubungi"],
+    }),
+  },
+  {
+    id: "visitors",
+    anchor: "#statistik",
+    keywords: ["pengunjung", "visitor", "kunjungan", "dikunjungi", "traffic", "counter", "penghitung"],
+    phrases: ["berapa orang", "berapa yang lihat", "berapa pengunjung", "jumlah pengunjung"],
+    build: () => ({
+      text: "Jumlah pengunjung, repositori publik GitHub, waktu Jakarta, dan tanggal pembaruan terakhir ada di bagian Statistik pada halaman ini. Angkanya diperbarui otomatis, bukan ditulis manual.",
+      chips: ["Proyek unggulan", "Landing page live", "Cara menghubungi"],
     }),
   },
   {
@@ -323,5 +353,9 @@ export function resolveReply(input: string): ChatReply {
     }
   }
 
-  return bestIntent ? bestIntent.build() : fallbackReply;
+  if (!bestIntent) return fallbackReply;
+
+  const reply = bestIntent.build();
+
+  return bestIntent.anchor ? { ...reply, anchor: bestIntent.anchor } : reply;
 }
