@@ -4864,3 +4864,109 @@ footer a {
     animation: none !important;
   }
 }
+
+/* ============ Live Stats ============ */
+
+.stat-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.stat-tile {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: linear-gradient(160deg, rgba(9, 10, 24, 0.9), rgba(3, 3, 12, 0.9));
+  padding: 18px;
+  transition: border-color 260ms ease, transform 260ms
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stat-tile:hover {
+  border-color: rgba(107, 0, 156, 0.5);
+  transform: translateY(-3px);
+}
+
+.stat-tile::before {
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  height: 90px;
+  width: 90px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(107, 0, 156, 0.22), transparent 68%);
+  content: "";
+  pointer-events: none;
+}
+
+.stat-icon {
+  display: grid;
+  height: 34px;
+  width: 34px;
+  place-items: center;
+  border: 1px solid rgba(107, 0, 156, 0.4);
+  border-radius: 8px;
+  background: rgba(45, 38, 134, 0.2);
+  color: #b078e0;
+}
+
+.stat-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 6px 0 0;
+  color: rgba(248, 251, 255, 0.5);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.stat-live {
+  height: 6px;
+  width: 6px;
+  border-radius: 999px;
+  background: #7dffdd;
+  box-shadow: 0 0 8px rgba(125, 255, 221, 0.8);
+  animation: statPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes statPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.stat-value {
+  color: #f8fbff;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+
+.stat-value.is-pending {
+  color: rgba(248, 251, 255, 0.28);
+}
+
+.stat-note {
+  color: rgba(248, 251, 255, 0.4);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-live {
+    animation: none !important;
+  }
+}
