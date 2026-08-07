@@ -27,6 +27,8 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
+import { refreshContent } from "./lib/liveContent";
+import { applyTheme } from "./lib/themes";
 import ChatWidget from "./components/ChatWidget";
 import LandingPreviewCard from "./components/LandingPreviewCard";
 import LiveStats from "./components/LiveStats";
@@ -47,8 +49,9 @@ import {
   projects,
   skillIcons,
   skills,
+  theme,
   type Project,
-} from "./data/portfolio";
+} from "./data/content";
 import AnimatedWave from "./components/AnimatedWave";
 
 const skillIconsByIndex = [Code2, Database, Workflow, Layers3];
@@ -56,6 +59,28 @@ const focusIconsByIndex = [FileCode2, Workflow, TestTube2, CheckCircle2];
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const [contentVersion, setContentVersion] = useState(0);
+
+  // Tema ikut berubah saat penyegaran konten membawa nilai baru.
+  useEffect(() => {
+    applyTheme(theme);
+  }, [contentVersion]);
+
+  useEffect(() => {
+    if (showSplash) return undefined;
+
+    let active = true;
+
+    // Konten panggangan sudah tampil; ini hanya menyusul memperbaruinya
+    // kalau ada perubahan di admin. Gagal pun tidak apa-apa.
+    refreshContent().then((changed) => {
+      if (active && changed) setContentVersion((value) => value + 1);
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [showSplash]);
 
   useEffect(() => {
     if (showSplash) return undefined;
@@ -137,7 +162,7 @@ function App() {
       <div className="site-atmosphere" aria-hidden="true" />
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       <Navbar />
-      <main id="main-content">
+      <main id="main-content" key={contentVersion}>
         <Hero splashDone={!showSplash} />
         <ProfileSection />
         <FocusSection />
