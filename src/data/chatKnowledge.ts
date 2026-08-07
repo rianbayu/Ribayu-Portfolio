@@ -8,7 +8,7 @@ import {
   profile,
   projects,
   skills,
-} from "./portfolio";
+} from "./content";
 
 export type ChatReply = {
   text: string;
