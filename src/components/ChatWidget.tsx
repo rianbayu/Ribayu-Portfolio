@@ -9,7 +9,7 @@ import {
   type KeyboardEvent,
 } from "react";
 import { greetingReply, quickPrompts, resolveReply } from "../data/chatKnowledge";
-import { profile } from "../data/portfolio";
+import { profile } from "../data/content";
 import TetrisRain from "./TetrisRain";
 
 type ChatMessage = {

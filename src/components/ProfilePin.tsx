@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { profile } from "../data/portfolio";
+import { profile } from "../data/content";
 
 export default function ProfilePin({ start = true }: { start?: boolean }) {
   const [photoReady, setPhotoReady] = useState(Boolean(profile.photo));

@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { profile } from "../data/portfolio";
+import { profile } from "../data/content";
 
 type SplashScreenProps = {
   onComplete: () => void;

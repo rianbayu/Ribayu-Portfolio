@@ -1,6 +1,6 @@
 import { ArrowUpRight, MonitorSmartphone, PlayCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { LandingPage } from "../data/portfolio";
+import type { LandingPage } from "../data/content";
 import TetrisRain from "./TetrisRain";
 
 /** Lebar viewport yang disimulasikan iframe sebelum diperkecil. */

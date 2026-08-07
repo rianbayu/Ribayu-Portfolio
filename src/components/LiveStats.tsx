@@ -1,6 +1,6 @@
 import { Clock3, Eye, GitBranch, RefreshCw } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import { profile } from "../data/portfolio";
+import { profile } from "../data/content";
 import { fetchVisitorCount, visitorCountConfigured } from "../lib/visitorCount";
 
 const GITHUB_USERS = [profile.githubPersonal, profile.githubPrimary]

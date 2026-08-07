@@ -1,6 +1,6 @@
 import { Download, Github, Mail, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { profile } from "../data/portfolio";
+import { profile } from "../data/content";
 import TetrisRain from "./TetrisRain";
 
 const navItems = [
