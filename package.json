@@ -7,13 +7,18 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "seed": "tsc src/data/portfolio.ts --outDir .seed-tmp --module esnext --target es2020 --moduleResolution bundler && node scripts/generate-seed.mjs > supabase/seed.sql && rm -rf .seed-tmp",
+    "content": "node scripts/fetch-content.mjs",
+    "prebuild": "node scripts/fetch-content.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.112.2",
     "gsap": "^3.15.0",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

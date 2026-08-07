@@ -6,10 +6,12 @@ export default {
       colors: {
         ink: "#020207",
         paper: "#f8fbff",
-        moss: "#7dffdd",
-        signal: "#0ba4e0",
-        ember: "#6000ff",
-        brass: "#cdd7ff",
+        // Terhubung ke variabel palet di styles.css supaya kelas seperti
+        // bg-signal/60 ikut berubah saat tema diganti.
+        moss: "rgb(var(--c-moss) / <alpha-value>)",
+        signal: "rgb(var(--c-signal) / <alpha-value>)",
+        ember: "rgb(var(--c-ember) / <alpha-value>)",
+        brass: "rgb(var(--c-brass) / <alpha-value>)",
         graphite: "#0b0d19",
       },
       boxShadow: {
