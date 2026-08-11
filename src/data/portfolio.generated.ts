@@ -1,7 +1,7 @@
 // BERKAS INI DIHASILKAN OTOMATIS -- JANGAN DIEDIT MANUAL.
 // Sumber: Supabase, ditarik oleh scripts/fetch-content.mjs saat build.
 // Untuk mengubah isinya, gunakan panel admin di /admin lalu build ulang.
-// Terakhir ditarik: 2026-08-07T19:22:09.727Z
+// Terakhir ditarik: 2026-08-11T12:01:03.741Z
 
 import type {
   Experience,
@@ -340,7 +340,7 @@ export const skills = [
 export const skillIcons = [
   {
     "name": "VUE",
-    "icon": "https://icon-icons.com/icon/vuejs-logo/169247"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/3840px-Vue.js_Logo_2.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
   },
   {
     "name": "React",
