@@ -43,6 +43,8 @@ export const profile = {
   phone: "+62-859-5977-2116",
   githubPrimary: "https://github.com/RiBayu-Seleris",
   githubPersonal: "https://github.com/rianbayu",
+  linkedin: "https://www.linkedin.com/in/rian-bayu-978478152/",
+  instagram: "https://www.instagram.com/ribayu1213/",
   location: "Jakarta / Depok, Indonesia",
   cv: "/files/CV_RianBayuAnanda.pdf",
   photo: "/images/komari.webp",

@@ -38,6 +38,8 @@ export function mapContent(portfolio, raw) {
       phone: text(portfolio.phone),
       githubPrimary: text(portfolio.github_primary),
       githubPersonal: text(portfolio.github_personal),
+      linkedin: text(portfolio.linkedin_url),
+      instagram: text(portfolio.instagram_url),
       location: text(portfolio.location),
       cv: text(portfolio.cv_url),
       photo: text(portfolio.photo_url),

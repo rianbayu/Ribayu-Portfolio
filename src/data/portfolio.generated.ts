@@ -1,7 +1,7 @@
 // BERKAS INI DIHASILKAN OTOMATIS -- JANGAN DIEDIT MANUAL.
 // Sumber: Supabase, ditarik oleh scripts/fetch-content.mjs saat build.
 // Untuk mengubah isinya, gunakan panel admin di /admin lalu build ulang.
-// Terakhir ditarik: 2026-08-11T12:01:03.741Z
+// Terakhir ditarik: 2026-08-11T13:06:33.020Z
 
 import type {
   Experience,
@@ -18,6 +18,8 @@ export const profile = {
   "phone": "+62-859-5977-2116",
   "githubPrimary": "https://github.com/RiBayu-Seleris",
   "githubPersonal": "https://github.com/rianbayu",
+  "linkedin": "",
+  "instagram": "",
   "location": "Jakarta / Depok, Indonesia",
   "cv": "/files/CV_RianBayuAnanda.pdf",
   "photo": "/images/komari.webp",
