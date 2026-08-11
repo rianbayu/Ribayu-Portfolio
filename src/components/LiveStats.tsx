@@ -42,8 +42,9 @@ function useJakartaClock() {
     weekday: "short",
   }).format(now);
 
+  // Jam kerja: Senin-Jumat, 08.00-17.00 WIB.
   const isWeekday = !["Sat", "Sun"].includes(weekday);
-  const working = isWeekday && hour >= 9 && hour < 18;
+  const working = isWeekday && hour >= 8 && hour < 17;
 
   return { time, working };
 }
