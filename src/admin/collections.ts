@@ -198,6 +198,8 @@ export const PROFILE_FIELDS: FieldSpec[] = [
   { name: "photo_url", label: "Path foto", type: "url", maxLength: 400 },
   { name: "github_primary", label: "GitHub utama", type: "url", maxLength: 300 },
   { name: "github_personal", label: "GitHub pribadi", type: "url", maxLength: 300 },
+  { name: "linkedin_url", label: "LinkedIn", type: "url", maxLength: 300 },
+  { name: "instagram_url", label: "Instagram", type: "url", maxLength: 300 },
   { name: "intro", label: "Intro singkat", type: "textarea", maxLength: 600 },
   { name: "about", label: "Tentang", type: "textarea", maxLength: 1200 },
 ];
