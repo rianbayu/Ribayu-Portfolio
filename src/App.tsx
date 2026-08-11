@@ -12,6 +12,8 @@ import {
   FileCode2,
   Github,
   GraduationCap,
+  Instagram,
+  Linkedin,
   Layers3,
   Mail,
   MapPin,
@@ -263,6 +265,32 @@ function Hero({ splashDone }: { splashDone: boolean }) {
               <Mail size={17} />
               <span>Email</span>
             </a>
+            {profile.linkedin && (
+              <a
+                className="tetris-host"
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`LinkedIn ${profile.name}`}
+              >
+                <TetrisRain />
+                <Linkedin size={17} />
+                <span>LinkedIn</span>
+              </a>
+            )}
+            {profile.instagram && (
+              <a
+                className="tetris-host"
+                href={profile.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Instagram ${profile.name}`}
+              >
+                <TetrisRain />
+                <Instagram size={17} />
+                <span>Instagram</span>
+              </a>
+            )}
           </div>
           <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
             {metrics.map((metric) => (
@@ -1104,6 +1132,22 @@ function ContactSection() {
               value="CV_RianBayuAnanda.pdf"
               href={profile.cv}
             />
+            {profile.linkedin && (
+              <ContactRow
+                icon={<Linkedin size={18} />}
+                label="LinkedIn"
+                value={handleOf(profile.linkedin)}
+                href={profile.linkedin}
+              />
+            )}
+            {profile.instagram && (
+              <ContactRow
+                icon={<Instagram size={18} />}
+                label="Instagram"
+                value={`@${handleOf(profile.instagram)}`}
+                href={profile.instagram}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -1165,6 +1209,12 @@ function Footer() {
       </div>
     </footer>
   );
+}
+
+/** Mengambil segmen terakhir URL profil sebagai nama pengguna, supaya
+ *  baris kontak tidak menampilkan URL panjang. */
+function handleOf(url: string) {
+  return url.replace(/\/+$/, "").split("/").pop() ?? url;
 }
 
 function ContactRow({
